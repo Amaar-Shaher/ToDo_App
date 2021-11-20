@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/BAK">
+
+    <data>
+        <variable
+            name="viewmodelvar"
+            type="com.example.todo_app.model.Viewmodel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AddFragment">
+
+        <EditText
+            android:id="@+id/title_edit_view"
+            android:layout_width="287dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="60dp"
+            android:ems="10"
+
+            android:text="@={viewmodelvar.title}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="put your title task"
+            android:background="@color/TEXT"/>
+
+        <EditText
+            android:id="@+id/des_edit_view"
+            android:layout_width="286dp"
+            android:layout_height="151dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/TEXT"
+            android:ems="10"
+            android:hint="Subject"
+            android:inputType="textPersonName"
+            android:text="@={viewmodelvar.des}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_edit_view"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/date_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@={viewmodelvar.deaddate}"
+            android:inputType="date"
+            android:hint="inter the final date"
+            android:background="@color/TEXT"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/des_edit_view" />
+
+        <Button
+            android:id="@+id/save_botton"
+            android:layout_width="388dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="68dp"
+            android:backgroundTint="@color/TEXT"
+            android:text="save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/date_text_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
